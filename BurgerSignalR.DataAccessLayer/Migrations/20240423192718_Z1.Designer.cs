@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BurgerSignalR.DataAccessLayer.Migrations
 {
     [DbContext(typeof(BurgerContext))]
-    [Migration("20240423073630_Initialize")]
-    partial class Initialize
+    [Migration("20240423192718_Z1")]
+    partial class Z1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

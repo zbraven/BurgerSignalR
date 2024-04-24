@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BurgerSignalR.DataAccessLayer.Migrations
 {
     /// <inheritdoc />
-    public partial class Initialize : Migration
+    public partial class Z1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

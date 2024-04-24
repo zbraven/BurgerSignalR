@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BurgerSignalR.BusinessLayer\BurgerSignalR.BusinessLayer.csproj" />
     <ProjectReference Include="..\BurgerSignalR.DataAccessLayer\BurgerSignalR.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\BurgerSignalR.DtoLayer\BurgerSignalR.DtoLayer.csproj" />
   </ItemGroup>
 
 </Project>

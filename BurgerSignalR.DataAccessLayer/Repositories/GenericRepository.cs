@@ -4,7 +4,7 @@ namespace BurgerSignalR.DataAccessLayer.Repositories
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
-        private readonly BurgerContext _context;
+        protected readonly BurgerContext _context;
         public GenericRepository(BurgerContext context)
         {
             _context = context;

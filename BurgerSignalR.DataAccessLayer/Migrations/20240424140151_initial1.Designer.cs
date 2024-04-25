@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BurgerSignalR.DataAccessLayer.Migrations
 {
     [DbContext(typeof(BurgerContext))]
-    [Migration("20240423192718_Z1")]
-    partial class Z1
+    [Migration("20240424140151_initial1")]
+    partial class initial1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -315,12 +315,17 @@ namespace BurgerSignalR.DataAccessLayer.Migrations
             modelBuilder.Entity("BurgerSignalR.EntityLayer.Entities.Product", b =>
                 {
                     b.HasOne("BurgerSignalR.EntityLayer.Entities.Category", "Category")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("CategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("BurgerSignalR.EntityLayer.Entities.Category", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

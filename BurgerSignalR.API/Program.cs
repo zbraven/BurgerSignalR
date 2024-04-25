@@ -60,6 +60,7 @@ builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 
 
 
+
 var app = builder.Build();
 
 // Kültür yapýlandýrmasý

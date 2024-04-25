@@ -4,7 +4,7 @@ using BurgerSignalR.EntityLayer.Entities;
 
 namespace BurgerSignalR.API.Mapping
 {
-    public class ProductMapping:Profile
+    public class ProductMapping : Profile
     {
         public ProductMapping()
         {
@@ -12,6 +12,9 @@ namespace BurgerSignalR.API.Mapping
             CreateMap<Product, CreateProductDto>().ReverseMap();
             CreateMap<Product, UpdateProductDto>().ReverseMap();
             CreateMap<Product, GetProductDto>().ReverseMap();
+            CreateMap<Product, ResultProductWithCategory>()
+            .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName));
+
         }
     }
 }

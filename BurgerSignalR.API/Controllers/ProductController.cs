@@ -26,6 +26,20 @@ namespace BurgerSignalR.API.Controllers
             return Ok(value);
         }
 
+        [HttpGet("ProductListWithCategory")]
+        public IActionResult ProductListWithCategory()
+        {
+            // TGetProductsWithCategories metodunu kullanarak ürünleri ve ilgili kategorileri getir
+            var productListWithCategories = _productService.TGetProductsWithCategories();
+
+            // AutoMapper kullanarak Entity'leri DTO'ya çevir
+            var productListWithCategoryDtos = _mapper.Map<List<ResultProductWithCategory>>(productListWithCategories);
+
+            // DTO listesini dön
+            return Ok(productListWithCategoryDtos);
+        }
+    
+
         [HttpPost]
         public IActionResult CreateProduct(CreateProductDto createProductDto)
         {

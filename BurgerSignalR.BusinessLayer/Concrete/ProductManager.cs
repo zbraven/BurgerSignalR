@@ -35,9 +35,10 @@ namespace BurgerSignalR.BusinessLayer.Concrete
             return _productDal.GetListAll();
         }
 
-    
-
-      
+        public List<Product> TGetProductsWithCategories()
+        {
+            return _productDal.GetProductsWithCategories();
+        }
 
         public void TUpdate(Product entity)
         {

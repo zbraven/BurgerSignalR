@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BurgerSignalR.DataAccessLayer\BurgerSignalR.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\BurgerSignalR.DtoLayer\BurgerSignalR.DtoLayer.csproj" />
     <ProjectReference Include="..\BurgerSignalR.EntityLayer\BurgerSignalR.EntityLayer.csproj" />
   </ItemGroup>
 

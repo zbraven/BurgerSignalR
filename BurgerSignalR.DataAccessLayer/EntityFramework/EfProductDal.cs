@@ -11,6 +11,9 @@ namespace BurgerSignalR.DataAccessLayer.EntityFramework
         {
         }
 
-       
+        public List<Product> GetProductsWithCategories()
+        {
+            return _context.Products.Include(p => p.Category).ToList();
+        }
     }
 }

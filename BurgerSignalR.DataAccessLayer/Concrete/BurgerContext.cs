@@ -1,5 +1,6 @@
 ﻿using BurgerSignalR.EntityLayer.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace BurgerSignalR.DataAccessLayer
 
         }
 
+    
+
         public DbSet<About> Abouts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -29,7 +32,8 @@ namespace BurgerSignalR.DataAccessLayer
         public DbSet<Product> Products { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
-   
+
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BurgerSignalR.DtoLayer.ProductDto
+﻿namespace BurgerSignalR.WebUI.Dtos.ProductDtos
 {
-    public class ResultProductWithCategory
+    public class UpdateProductDto
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }
@@ -14,7 +8,6 @@ namespace BurgerSignalR.DtoLayer.ProductDto
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public bool ProductStatus { get; set; }
-        public string CategoryName {  get; set; }            
-
+        public int CategoryID { get; set; }
     }
 }

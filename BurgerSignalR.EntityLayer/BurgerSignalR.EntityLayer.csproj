@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BurgerSignalR.DtoLayer\BurgerSignalR.DtoLayer.csproj" />
+  </ItemGroup>
+
 </Project>

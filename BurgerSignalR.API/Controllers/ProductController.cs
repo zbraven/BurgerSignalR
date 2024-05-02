@@ -54,7 +54,7 @@ namespace BurgerSignalR.API.Controllers
             });
             return Ok("Ürün Bilgisi Eklendi");
         }
-        [HttpDelete("{id}")]S
+        [HttpDelete("{id}")]
         public IActionResult DeleteProduct(int id)
         {
             var value = _productService.TGetByID(id);

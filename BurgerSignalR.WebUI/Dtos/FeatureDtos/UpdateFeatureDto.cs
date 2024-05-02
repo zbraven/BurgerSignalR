@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace v
+namespace BurgerSignalR.WebUI.Dtos.FeatureDtos
 {
     public class UpdateFeatureDto
     {

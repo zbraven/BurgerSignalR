@@ -1,3 +1,4 @@
+using BurgerSignalR.API.Hubs;
 using BurgerSignalR.BusinessLayer.Abstract;
 using BurgerSignalR.BusinessLayer.Concrete;
 using BurgerSignalR.DataAccessLayer;
@@ -12,6 +13,19 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
+//SignalR
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.AllowAnyHeader()
+        .AllowAnyMethod()
+        .SetIsOriginAllowed((host) => true)
+        .AllowCredentials();
+    });
+});
+builder.Services.AddSignalR();
 
 // Swagger'ý yapýlandýr
 builder.Services.AddSwaggerGen(c =>
@@ -75,12 +89,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CMMS API V1"));
 }
 
+app.UseCors("CorsPolicy");
 
 // Middleware'leri yapýlandýr
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-
+app.MapHub<SignalRHub>("/signalrhub");
 
 app.Run();

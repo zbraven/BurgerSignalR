@@ -36,6 +36,8 @@ builder.Services.AddSwaggerGen(c =>
 // AutoMapper yapýlandýrmasý
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 // Veritabaný baðlantý dizesi
 builder.Services.AddDbContext<BurgerContext>(options =>
     options.UseSqlServer(

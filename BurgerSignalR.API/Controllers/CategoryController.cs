@@ -24,6 +24,24 @@ namespace BurgerSignalR.API.Controllers
             return Ok(value);
         }
 
+        [HttpGet("CategoryCount")]
+        public IActionResult CategoryCount()
+        {
+            return Ok(_categoryService.TCategoryCount());   
+        }
+
+        [HttpGet("ActiveCategoryCount")]
+        public IActionResult ActiveCategoryCount()
+        {
+            return Ok(_categoryService.TActiveCategoryCount());
+        }
+
+        [HttpGet("PassiveCategoryCount")]
+        public IActionResult PassiveCategoryCount()
+        {
+            return Ok(_categoryService.TPassiveCategoryCount());
+        }
+
         [HttpPost]
         public IActionResult CreateCategory(CreateCategoryDto createCategoryDto)
         {
@@ -53,7 +71,7 @@ namespace BurgerSignalR.API.Controllers
             _categoryService.TUpdate(new Category()
             {
                 CategoryName = updateCategoryDto.CategoryName,
-                CategoryID=updateCategoryDto.CategoryID,
+                CategoryID = updateCategoryDto.CategoryID,
                 Status = updateCategoryDto.Status
             });
             return Ok("Kategori Güncellendi");

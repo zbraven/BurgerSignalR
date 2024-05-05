@@ -5,11 +5,13 @@ using BurgerSignalR.EntityLayer.Entities;
 namespace BurgerSignalR.DataAccessLayer.EntityFramework
 {
     public class EfBookingDal : GenericRepository<Booking>, IBookingDal
-	{
-		public EfBookingDal(BurgerContext context) : base(context)
-		{
-		}
+    {
+        private readonly BurgerContext _context;
+        public EfBookingDal(BurgerContext context) : base(context)
+        {
+            _context = context;
+        }
 
-		
-	}
+
+    }
 }

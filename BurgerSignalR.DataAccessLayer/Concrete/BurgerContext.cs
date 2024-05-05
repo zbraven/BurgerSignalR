@@ -21,7 +21,7 @@ namespace BurgerSignalR.DataAccessLayer
 
         }
 
-    
+
 
         public DbSet<About> Abouts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
@@ -33,7 +33,7 @@ namespace BurgerSignalR.DataAccessLayer
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
 
-       
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

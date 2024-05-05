@@ -5,8 +5,10 @@ namespace BurgerSignalR.DataAccessLayer.EntityFramework
 {
     public class EfSocialMediaDal : GenericRepository<SocialMedia>, ISocialMediaDal
     {
+        private readonly BurgerContext _context;
         public EfSocialMediaDal(BurgerContext context) : base(context)
         {
+            _context = context; 
         }
     }
 }

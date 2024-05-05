@@ -6,8 +6,10 @@ namespace BurgerSignalR.DataAccessLayer.EntityFramework
 {
     public class EfContactDal : GenericRepository<Contact>, IContactDal
     {
+        private readonly BurgerContext _context;
         public EfContactDal(BurgerContext context) : base(context)
         {
+            _context = context;
         }
     }
 }

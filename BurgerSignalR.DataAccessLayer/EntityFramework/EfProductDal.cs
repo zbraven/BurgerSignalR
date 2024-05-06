@@ -20,7 +20,32 @@ namespace BurgerSignalR.DataAccessLayer.EntityFramework
 
         public int ProductCount()
         {
-           return _context.Products.Count();
+            return _context.Products.Count();
+        }
+
+        public int ProductCountByCategoryNameDrink()
+        {
+            return _context.Products.Where(p => p.CategoryID == (_context.Products.Where(c => c.Category.CategoryName == "İçecek").Select(z => z.CategoryID).FirstOrDefault())).Count();
+        }
+
+        public int ProductCountByCategoryNameHamburger()
+        {
+            return _context.Products.Where(p => p.CategoryID == (_context.Products.Where(c => c.Category.CategoryName == "Hamburger").Select(z => z.CategoryID).FirstOrDefault())).Count();
+        }
+
+        public string ProductNameByMaxPrice()
+        {
+            return _context.Products.Where(x => x.Price == (_context.Products.Max(y => y.Price))).Select(z => z.ProductName).FirstOrDefault();
+        }
+
+        public string ProductNameByMinPrice()
+        {
+            return _context.Products.Where(x => x.Price == (_context.Products.Min(y => y.Price))).Select(z => z.ProductName).FirstOrDefault();
+        }
+
+        public decimal ProductPriceAvg()
+        {
+            return _context.Products.Average(p => p.Price);
         }
     }
 }

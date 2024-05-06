@@ -5,7 +5,12 @@ namespace BurgerSignalR.DataAccessLayer.Abstract
     public interface IProductDal : IGenericDal<Product>
     {
         List<Product> GetProductsWithCategories();
-        public int ProductCount();
+       int ProductCount();
+       int ProductCountByCategoryNameHamburger();
+       int ProductCountByCategoryNameDrink();
+       decimal ProductPriceAvg(); 
+       string ProductNameByMinPrice();
+       string ProductNameByMaxPrice();
 
     }
 }
